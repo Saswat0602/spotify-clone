@@ -16,13 +16,8 @@ import { AiOutlinePlus } from "react-icons/ai";
 //   songs: Song[];
 // }
 
-const Library=() => {
-  
-
-
-  const onClick = () => {
- 
-  };
+const Library = () => {
+  const onClick = () => {};
 
   return (
     <div className="flex flex-col">
