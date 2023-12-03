@@ -12,7 +12,7 @@ import { useUser } from "@/hooks/useUser";
 import Input from "./Input";
 import Button from "./Button";
 import toast from "react-hot-toast";
-
+import music from "../public/images/music.jpg"
 const UploadModal = () => {
   const [isLoading, setIsLoading] = useState(false);
 
@@ -25,7 +25,7 @@ const UploadModal = () => {
       author: "",
       title: "",
       song: null,
-      image: null,
+      image: music,
     },
   });
 
