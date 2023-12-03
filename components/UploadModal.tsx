@@ -83,7 +83,7 @@ const UploadModal = () => {
           user_id: user.id,
           title: values.title,
           author: values.author,
-          image_path: imageData.path,
+          image_path: imageData.path || music,
           song_path: songData.path,
         });
 
@@ -131,7 +131,7 @@ const UploadModal = () => {
             type="file"
             accept=".mp3"
             id="song"
-            {...register("song")}
+            {...register("song"),{ required: true }}
           />
         </div>
         <div>
@@ -142,7 +142,7 @@ const UploadModal = () => {
             type="file"
             accept="image/*"
             id="image"
-            {...register("image", { required: true })}
+            {...register("image")}
           />
         </div>
         <Button disabled={isLoading} type="submit">
