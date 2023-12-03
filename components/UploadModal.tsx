@@ -39,7 +39,7 @@ const UploadModal = () => {
     try {
       setIsLoading(true);
 
-      const imageFile = values.image?.[0];
+      const imageFile = values.image?.[0] || music ;
       const songFile = values.song?.[0];
 
       if ( !songFile || !user) {
@@ -66,10 +66,14 @@ const UploadModal = () => {
       const { data: imageData, error: imageError } =
         await supabaseClient.storage
           .from("images")
-          .upload(`image-${values.title}-${uniqueID}`, imageFile, {
-            cacheControl: "3600",
-            upsert: false,
-          });
+          .upload(
+            `image-${values.title}-${uniqueID}`,
+            imageFile === music ? music : imageFile,
+            {
+              cacheControl: "3600",
+              upsert: false,
+            }
+          );
 
       if (imageError) {
         setIsLoading(false);
