@@ -42,7 +42,7 @@ const UploadModal = () => {
       const imageFile = values.image?.[0];
       const songFile = values.song?.[0];
 
-      if (!imageFile || !songFile || !user) {
+      if ( !songFile || !user) {
         toast.error("Missing fields");
         return;
       }
