@@ -1,23 +1,17 @@
-import { ReactNode } from "react";
+"use client";
+
 import { Toaster } from "react-hot-toast";
 
-type ToasterProviderProps = {
-  children: ReactNode;
-};
-
-const ToasterProvider = ({ children }: ToasterProviderProps) => {
+const ToasterProvider = () => {
   return (
-    <>
-      <Toaster
-        toastOptions={{
-          style: {
-            background: "#333",
-            color: "#fff",
-          },
-        }}
-      />
-      {children}
-    </>
+    <Toaster
+      toastOptions={{
+        style: {
+          background: "#333",
+          color: "#fff",
+        },
+      }}
+    />
   );
 };
 

@@ -23,7 +23,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang="en">
       <body className={font.className}>
-        <ToasterProvider>
+        <ToasterProvider />
           <SupabaseProvider>
             <UserProvider>
               <ModalProvider>
@@ -32,7 +32,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
               </ModalProvider>
             </UserProvider>
           </SupabaseProvider>
-        </ToasterProvider>
       </body>
     </html>
   );
